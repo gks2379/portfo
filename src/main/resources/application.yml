@@ -1,30 +1,24 @@
 spring:
   application:
     name: portfolio
-
-  # H2 Database (개발용)
   h2:
     console:
       enabled: true
       path: /h2-console
-
   datasource:
     url: jdbc:h2:mem:portfoliodb
     driverClassName: org.h2.Driver
     username: sa
     password:
-
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-  # Email Settings (Gmail SMTP)
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME}      # Render 환경변수에서 가져올 값
-    password: ${MAIL_PASSWORD}      # Render 환경변수에서 가져올 값
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -32,6 +26,3 @@ spring:
           starttls:
             enable: true
             required: true
-          connectiontimeout: 5000
-          timeout: 5000
-          writetimeout: 5000
