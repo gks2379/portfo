@@ -10,7 +10,7 @@ COPY src ./src
 RUN gradle build -x test --no-daemon
 
 # 2. 실행 환경 (Run Stage)
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 
 # 빌드된 JAR 파일만 복사
