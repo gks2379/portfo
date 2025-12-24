@@ -2,28 +2,172 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hans Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { padding-top: 5rem; }
-        .starter-template { padding: 3rem 1.5rem; text-align: center; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; }
+        .section-title { margin-bottom: 40px; font-weight: bold; position: relative; display: inline-block; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: #764ba2; margin: 10px auto; }
+        .experience-item { border-left: 3px solid #764ba2; padding-left: 20px; margin-bottom: 30px; position: relative; }
+        .experience-item::before { content: ''; width: 15px; height: 15px; background: #764ba2; border-radius: 50%; position: absolute; left: -9px; top: 0; }
+        .tech-badge { font-size: 0.9rem; margin: 3px; }
+        .card { transition: transform 0.3s; border: none; shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hans Portfolio</a>
-    </div>
-</nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">HANS.DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<main class="container">
-    <div class="starter-template">
-        <h1 th:text="${message}">Welcome Message</h1>
-        <p class="lead">여기는 저의 멋진 포트폴리오가 담길 공간입니다.<br> Spring Boot와 Thymeleaf를 사용하여 만들고 있습니다.</p>
-    </div>
-</main>
+    <!-- Hero Section -->
+    <section class="hero-section text-center" id="about">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">비즈니스 가치를 전달하는 개발자</h1>
+            <p class="lead mb-4">안정적인 백엔드 시스템 구축과 배포 자동화에 집중하는 백엔드 엔지니어 Hans입니다.</p>
+            <a href="#contact" class="btn btn-light btn-lg rounded-pill px-4">Contact Me</a>
+        </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.min.js"></script>
+    <!-- Skills Section -->
+    <section class="py-5 container" id="skills">
+        <div class="text-center">
+            <h2 class="section-title text-dark">Tech Stacks</h2>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8 text-center">
+                <div class="mb-4">
+                    <h5 class="text-muted">Backend & Language</h5>
+                    <span class="badge bg-primary tech-badge">Java 17</span>
+                    <span class="badge bg-success tech-badge">Spring Boot 3.x</span>
+                    <span class="badge bg-success tech-badge">JPA / QueryDSL</span>
+                    <span class="badge bg-warning text-dark tech-badge">Gradle</span>
+                </div>
+                <div class="mb-4">
+                    <h5 class="text-muted">Database & Infra</h5>
+                    <span class="badge bg-info text-dark tech-badge">MySQL</span>
+                    <span class="badge bg-danger tech-badge">Redis</span>
+                    <span class="badge bg-primary tech-badge">Docker</span>
+                    <span class="badge bg-secondary tech-badge">AWS / Render</span>
+                </div>
+                <div>
+                    <h5 class="text-muted">Tools</h5>
+                    <span class="badge bg-dark tech-badge">Git / GitHub</span>
+                    <span class="badge bg-dark tech-badge">IntelliJ</span>
+                    <span class="badge bg-dark tech-badge">Postman</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-5 bg-light" id="experience">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title text-dark">Work Experience</h2>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-8">
+                    
+                    <!-- Job 1 -->
+                    <div class="experience-item">
+                        <h4 class="fw-bold">백엔드 개발 및 운영</h4>
+                        <p class="text-muted">20XX.XX - 현재 | 현 직장</p>
+                        <div class="card shadow-sm p-3">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3">
+                                    <strong>🚀 DB 성능 최적화 (Slow Query 개선)</strong>
+                                    <p class="small text-muted mb-1">
+                                        - 특정 테이블 조회 시 CPU 사용량이 급증하는 이슈 발생<br>
+                                        - 실행 계획(Explain) 분석을 통해 Index 미적용 확인 및 복합 인덱스 추가<br>
+                                        - 결과: 쿼리 실행 속도 개선 및 <strong>DB CPU 부하 80% -> 20% 안정화</strong>
+                                    </p>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>🚀 대용량 엑셀 데이터 처리 최적화</strong>
+                                    <p class="small text-muted mb-1">
+                                        - 기존 메모리 기반 방식에서 <strong>Streaming 방식</strong>으로 전환<br>
+                                        - OOM(Out of Memory) 방지 및 대량 데이터 처리 속도 50% 향상
+                                    </p>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>🚀 예약/주문 관리 시스템 (OMS) 고도화</strong>
+                                    <p class="small text-muted mb-1">
+                                        - 트랜잭션 관리 및 동시성 제어(Lock)를 통한 데이터 정합성 확보<br>
+                                        - 외부 파트너사 연동을 위한 표준 OpenAPI 설계 및 구축
+                                    </p>
+                                </li>
+                                <li>
+                                    <strong>🚀 배포 프로세스 개선</strong>
+                                    <p class="small text-muted mb-0">
+                                        - Docker 컨테이너 기반 배포 환경 구축으로 일관된 실행 환경 보장
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5 container" id="projects">
+        <div class="text-center">
+            <h2 class="section-title text-dark">Personal Projects</h2>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">🛠 My Portfolio Web</h5>
+                        <p class="card-text text-muted">Spring Boot와 Docker를 활용해 직접 구축한 포트폴리오 사이트입니다.</p>
+                        <hr>
+                        <ul class="small text-muted">
+                            <li><strong>Backend:</strong> Spring Boot, Thymeleaf</li>
+                            <li><strong>Deploy:</strong> Docker Multi-stage Build, Render Cloud</li>
+                            <li><strong>Feature:</strong> 반응형 디자인, CI/CD 자동 배포 적용</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Code (GitHub)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Hans. All Rights Reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-white me-3"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="text-white"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
