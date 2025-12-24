@@ -16,13 +16,16 @@ spring:
     show-sql: true
   mail:
     host: smtp.gmail.com
-    port: 587
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    port: 465          # 587 -> 465 변경
+    protocol: smtps    # 프로토콜 명시
+    username: ${MAIL_USERNAME:your-email@gmail.com}
+    password: ${MAIL_PASSWORD:your-app-password}
     properties:
       mail:
         smtp:
           auth: true
+          ssl:
+            enable: true      # SSL 활성화
+            trust: smtp.gmail.com
           starttls:
-            enable: true
-            required: true
+            enable: false     # STARTTLS 비활성화
