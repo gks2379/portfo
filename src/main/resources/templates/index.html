@@ -3,21 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hans Portfolio</title>
+    <title>한정우 - Backend Developer Portfolio</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
-        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; }
-        .section-title { margin-bottom: 40px; font-weight: bold; position: relative; display: inline-block; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: #764ba2; margin: 10px auto; }
-        .experience-item { border-left: 3px solid #764ba2; padding-left: 20px; margin-bottom: 30px; position: relative; }
-        .experience-item::before { content: ''; width: 15px; height: 15px; background: #764ba2; border-radius: 50%; position: absolute; left: -9px; top: 0; }
-        .tech-badge { font-size: 0.9rem; margin: 3px; }
-        .card { transition: transform 0.3s; border: none; shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card:hover { transform: translateY(-5px); }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8f9fa; color: #333; }
+        
+        /* Hero Section */
+        .hero-section { 
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); 
+            color: white; 
+            padding: 120px 0; 
+        }
+        .hero-avatar {
+            width: 150px; height: 150px; object-fit: cover; border-radius: 50%; 
+            border: 5px solid rgba(255,255,255,0.3); margin-bottom: 20px;
+        }
+
+        /* Section Styling */
+        .section-padding { padding: 80px 0; }
+        .section-title { 
+            margin-bottom: 50px; font-weight: 700; position: relative; display: inline-block; 
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .section-title::after { 
+            content: ''; display: block; width: 60px; height: 3px; 
+            background: #1e3c72; margin: 15px auto 0; 
+        }
+
+        /* Experience Timeline */
+        .timeline { border-left: 3px solid #e9ecef; margin-left: 15px; position: relative; }
+        .timeline-item { padding-left: 30px; margin-bottom: 50px; position: relative; }
+        .timeline-marker { 
+            width: 16px; height: 16px; background: #fff; border: 3px solid #1e3c72; 
+            border-radius: 50%; position: absolute; left: -9.5px; top: 5px; 
+        }
+        .timeline-date { color: #6c757d; font-size: 0.9rem; font-weight: 500; margin-bottom: 5px; }
+        .timeline-company { font-size: 1.2rem; font-weight: 700; color: #1e3c72; }
+        .timeline-role { font-weight: 600; color: #495057; margin-bottom: 15px; }
+
+        /* Tech Badges */
+        .tech-badge { 
+            font-size: 0.9rem; padding: 8px 15px; margin: 5px; 
+            border-radius: 20px; font-weight: 500;
+        }
+        
+        /* Card Hover */
+        .project-card { transition: transform 0.3s; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -25,7 +62,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">HANS.DEV</a>
+            <a class="navbar-brand fw-bold" href="#">HAN JEONG-WOO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,138 +71,214 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section text-center" id="about">
+    <header class="hero-section text-center" id="about">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">비즈니스 가치를 전달하는 개발자</h1>
-            <p class="lead mb-4">안정적인 백엔드 시스템 구축과 배포 자동화에 집중하는 백엔드 엔지니어 Hans입니다.</p>
-            <a href="/contact" class="btn btn-light btn-lg rounded-pill px-4">Contact Me</a>
+            <div class="mb-4">
+                <i class="fas fa-laptop-code fa-5x text-white-50"></i>
+            </div>
+            <h1 class="display-2 fw-bold mb-4">한정우</h1>
+            <div class="d-flex justify-content-center gap-3 mt-5">
+                <a href="#experience" class="btn btn-light btn-lg rounded-pill px-4 fw-bold">View Experience</a>
+                <a href="/contact" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold">Contact Me</a>
+            </div>
         </div>
-    </section>
+    </header>
 
     <!-- Skills Section -->
-    <section class="py-5 container" id="skills">
+    <section class="section-padding container" id="skills">
         <div class="text-center">
-            <h2 class="section-title text-dark">Tech Stacks</h2>
+            <h2 class="section-title">Technical Skills</h2>
         </div>
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-8 text-center">
-                <div class="mb-4">
-                    <h5 class="text-muted">Backend & Language</h5>
-                    <span class="badge bg-primary tech-badge">Java 17</span>
-                    <span class="badge bg-success tech-badge">Spring Boot 3.x</span>
-                    <span class="badge bg-success tech-badge">JPA / QueryDSL</span>
-                    <span class="badge bg-warning text-dark tech-badge">Gradle</span>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-10">
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold mb-3 text-primary">Backend & Language</h5>
+                        <div>
+                            <span class="badge bg-dark tech-badge">Java 17</span>
+                            <span class="badge bg-success tech-badge">Spring Boot 3.x</span>
+                            <span class="badge bg-primary tech-badge">PHP 7/8</span>
+                            <span class="badge bg-danger tech-badge">Laravel</span>
+                            <span class="badge bg-secondary tech-badge">JPA / QueryDSL</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <h5 class="text-muted">Database & Infra</h5>
-                    <span class="badge bg-info text-dark tech-badge">MySQL</span>
-                    <span class="badge bg-danger tech-badge">Redis</span>
-                    <span class="badge bg-primary tech-badge">Docker</span>
-                    <span class="badge bg-secondary tech-badge">AWS / Render</span>
-                </div>
-                <div>
-                    <h5 class="text-muted">Tools</h5>
-                    <span class="badge bg-dark tech-badge">Git / GitHub</span>
-                    <span class="badge bg-dark tech-badge">IntelliJ</span>
-                    <span class="badge bg-dark tech-badge">Postman</span>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm border-0 mb-3 h-100">
+                            <div class="card-body p-4 text-center">
+                                <h5 class="fw-bold mb-3 text-primary">Infra & DevOps</h5>
+                                <div>
+                                    <span class="badge bg-warning text-dark tech-badge">AWS (EC2, RDS, S3)</span>
+                                    <span class="badge bg-info text-dark tech-badge">Docker</span>
+                                    <span class="badge bg-dark tech-badge">Linux</span>
+                                    <span class="badge bg-dark tech-badge">GitLab CI/CD</span>
+                                    <span class="badge bg-secondary tech-badge">Apache / Nginx</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm border-0 mb-3 h-100">
+                            <div class="card-body p-4 text-center">
+                                <h5 class="fw-bold mb-3 text-primary">Database & Monitoring</h5>
+                                <div>
+                                    <span class="badge bg-dark tech-badge">MySQL</span>
+                                    <span class="badge bg-danger tech-badge">Redis</span>
+                                    <span class="badge bg-secondary tech-badge">Sentry</span>
+                                    <span class="badge bg-secondary tech-badge">Uptime Kuma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="py-5 bg-light" id="experience">
+    <section class="section-padding bg-white" id="experience">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-title text-dark">Work Experience</h2>
+                <h2 class="section-title">Professional Experience</h2>
             </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-8">
-                    
-                    <!-- Job 1 -->
-                    <div class="experience-item">
-                        <h4 class="fw-bold">백엔드 개발 및 운영</h4>
-                        <p class="text-muted">20XX.XX - 현재 | 현 직장</p>
-                        <div class="card shadow-sm p-3">
-                            <ul class="list-unstyled mb-0">
-                                <li class="mb-3">
-                                    <strong>🚀 DB 성능 최적화 (Slow Query 개선)</strong>
-                                    <p class="small text-muted mb-1">
-                                        - 특정 테이블 조회 시 CPU 사용량이 급증하는 이슈 발생<br>
-                                        - 실행 계획(Explain) 분석을 통해 Index 미적용 확인 및 복합 인덱스 추가<br>
-                                        - 결과: 쿼리 실행 속도 개선 및 <strong>DB CPU 부하 80% -> 20% 안정화</strong>
-                                    </p>
-                                </li>
-                                <li class="mb-3">
-                                    <strong>🚀 대용량 엑셀 데이터 처리 최적화</strong>
-                                    <p class="small text-muted mb-1">
-                                        - 기존 메모리 기반 방식에서 <strong>Streaming 방식</strong>으로 전환<br>
-                                        - OOM(Out of Memory) 방지 및 대량 데이터 처리 속도 50% 향상
-                                    </p>
-                                </li>
-                                <li class="mb-3">
-                                    <strong>🚀 예약/주문 관리 시스템 (OMS) 고도화</strong>
-                                    <p class="small text-muted mb-1">
-                                        - 트랜잭션 관리 및 동시성 제어(Lock)를 통한 데이터 정합성 확보<br>
-                                        - 외부 파트너사 연동을 위한 표준 OpenAPI 설계 및 구축
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>🚀 배포 프로세스 개선</strong>
-                                    <p class="small text-muted mb-0">
-                                        - Docker 컨테이너 기반 배포 환경 구축으로 일관된 실행 환경 보장
-                                    </p>
-                                </li>
-                            </ul>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="timeline">
+                        
+                        <!-- Job 1: H2O Korea -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-date">2024.11 - Present</div>
+                            <h3 class="timeline-company">에이치투오코리아 (H2O Korea)</h3>
+                            <p class="timeline-role">Backend Manager | 숙박/레저 OMS 시스템 담당</p>
+                            
+                            <div class="card project-card bg-light">
+                                <div class="card-body">
+                                    <ul class="mb-0">
+                                        <li class="mb-2">
+                                            <strong>🚀 OTA 채널 요금 불일치 문제 해결</strong>
+                                            <p class="small text-muted mb-1">
+                                                - 요금 계산 로직 모듈화 및 DB 테이블 분리<br>
+                                                - 성과: <strong>요금 계산 오류율 94% 감소 (월 47건 → 3건)</strong>
+                                            </p>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>🚀 실시간 객실 재고 동기화 (Webhook)</strong>
+                                            <p class="small text-muted mb-1">
+                                                - Webhook 기반 실시간 재고 업데이트 시스템 구축<br>
+                                                - 성과: <strong>오버부킹 발생 건수 92% 감소</strong>, 동기화 지연시간 15분 → 30초 단축
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <strong>🚀 레거시 코드 리팩토링 및 성능 개선</strong>
+                                            <p class="small text-muted mb-0">
+                                                - N+1 쿼리 해결 및 인덱스 튜닝<br>
+                                                - 성과: <strong>API 평균 응답 시간 3.2초 → 0.8초 (75% 개선)</strong>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
+                        <!-- Job 2: HNS Communication -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-date">2021.01 - 2024.11</div>
+                            <h3 class="timeline-company">(주) 에이치엔에스커뮤니케이션</h3>
+                            <p class="timeline-role">Backend Developer (대리) | WMS/광고 시스템 담당</p>
+                            
+                            <div class="card project-card bg-light">
+                                <div class="card-body">
+                                    <ul class="mb-0">
+                                        <li class="mb-2">
+                                            <strong>🚀 Legacy Migration (PHP 5 → Laravel)</strong>
+                                            <p class="small text-muted mb-1">
+                                                - 스파게티 코드(약 15만 라인)를 MVC 구조로 전면 재설계<br>
+                                                - 성과: <strong>유지보수 비용 40% 절감</strong>, 신규 기능 개발 속도 2배 향상
+                                            </p>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>🚀 재고 조회 성능 최적화</strong>
+                                            <p class="small text-muted mb-1">
+                                                - DB 정규화 및 서브쿼리 제거, 인덱스 재설계<br>
+                                                - 성과: <strong>조회 시간 12초 → 1.5초 (87% 개선)</strong>
+                                            </p>
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>🚀 모바일 티켓 위변조 방지 시스템 구축</strong>
+                                            <p class="small text-muted mb-1">
+                                                - 일회용 토큰 기반 QR 코드 생성 및 실시간 API 검증 도입<br>
+                                                - 성과: <strong>티켓 부정 사용 100% 차단</strong>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <strong>🚀 Docker 기반 배포 파이프라인 구축</strong>
+                                            <p class="small text-muted mb-0">
+                                                - 트래픽 급증 시 서버 다운 방지를 위한 오토스케일링 대응<br>
+                                                - 성과: 배포 시간 50% 단축
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Job 3: Mondelez -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-date">2022.08 - 2023.03</div>
+                            <h3 class="timeline-company">몬델리즈 (Mondelez) 한국 전용 사이트</h3>
+                            <p class="timeline-role">Backend Staff (파견) | Java, Spring Boot</p>
+                            
+                            <div class="card project-card bg-light">
+                                <div class="card-body">
+                                    <ul class="mb-0">
+                                        <li class="mb-2">
+                                            <strong>🚀 Spring Boot 기반 RESTful API 설계</strong>
+                                            <p class="small text-muted mb-1">
+                                                - 재고 관리, 패키징 처리 등 핵심 도메인 API 설계 및 개발<br>
+                                                - JPA 기반 데이터 접근 계층 구현
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <strong>🚀 실시간 재고/입출고 모니터링 대시보드</strong>
+                                            <p class="small text-muted mb-0">
+                                                - 운영팀 재고 확인 시간 80% 단축, 수동 엑셀 작업 제거
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="py-5 container" id="projects">
-        <div class="text-center">
-            <h2 class="section-title text-dark">Personal Projects</h2>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-6 mx-auto">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">🛠 My Portfolio Web</h5>
-                        <p class="card-text text-muted">Spring Boot와 Docker를 활용해 직접 구축한 포트폴리오 사이트입니다.</p>
-                        <hr>
-                        <ul class="small text-muted">
-                            <li><strong>Backend:</strong> Spring Boot, Thymeleaf</li>
-                            <li><strong>Deploy:</strong> Docker Multi-stage Build, Render Cloud</li>
-                            <li><strong>Feature:</strong> 반응형 디자인, CI/CD 자동 배포 적용</li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Code (GitHub)</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <!-- Footer / Contact CTA -->
+    <section class="py-5 text-center bg-dark text-white" id="contact">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Hans. All Rights Reserved.</p>
-            <div class="mt-2">
-                <a href="#" class="text-white me-3"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" class="text-white"><i class="fas fa-envelope"></i> Email</a>
+            <h2 class="fw-bold mb-4">함께 일할 준비가 되어 있습니다</h2>
+            <p class="lead mb-4">더 자세한 이야기가 듣고 싶으시다면 언제든 연락 주세요.</p>
+            <a href="/contact" class="btn btn-primary btn-lg rounded-pill px-5">Contact Me</a>
+            <div class="mt-4 text-white-50">
+                <small>Email: gks909@naver.com | Phone: 010-9191-7818</small><br>
+                <small class="mt-2 d-block">&copy; 2025 Han Jeong-Woo. All Rights Reserved.</small>
             </div>
         </div>
-    </footer>
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
