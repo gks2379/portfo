@@ -31,7 +31,7 @@
         .case-result-label { font-weight: 700; color: #38a169; min-width: 60px; }
         
         .tech-tags { margin-top: 15px; }
-        .tech-badge { font-size: 0.75rem; padding: 4px 10px; margin-right: 5px; border-radius: 4px; background: #e2e8f0; color: #2d3748; font-weight: 600; }
+        .tech-badge { font-size: 0.8rem; padding: 6px 12px; margin-right: 5px; margin-bottom: 5px; border-radius: 20px; background: #e2e8f0; color: #2d3748; font-weight: 600; display: inline-block; }
         
         .quant-box { background: #f0fff4; border: 1px solid #c6f6d5; border-radius: 8px; padding: 20px; margin-top: 25px; }
         .quant-title { color: #2f855a; font-weight: 800; font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; }
@@ -72,6 +72,81 @@
         </div>
     </header>
 
+    <!-- Skills Section -->
+    <section class="section-padding bg-white" id="skills">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="row g-4">
+                        <!-- Backend & Language -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body p-4 text-center">
+                                    <h5 class="fw-bold mb-3 text-primary"><i class="fas fa-code"></i> Backend & Language</h5>
+                                    <div>
+                                        <span class="tech-badge bg-dark text-white">Java 17</span>
+                                        <span class="tech-badge bg-success text-white">Spring Boot 3.x</span>
+                                        <span class="tech-badge bg-primary text-white">PHP 7/8</span>
+                                        <span class="tech-badge bg-danger text-white">Laravel</span>
+                                        <span class="tech-badge bg-secondary text-white">JPA / QueryDSL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Infra & DevOps -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body p-4 text-center">
+                                    <h5 class="fw-bold mb-3 text-primary"><i class="fas fa-server"></i> Infra & DevOps</h5>
+                                    <div>
+                                        <span class="tech-badge bg-warning text-dark">AWS (EC2, RDS, S3)</span>
+                                        <span class="tech-badge bg-info text-dark">Docker</span>
+                                        <span class="tech-badge bg-dark text-white">Linux</span>
+                                        <span class="tech-badge bg-danger text-white">GitLab CI/CD</span>
+                                        <span class="tech-badge bg-secondary text-white">Apache / Nginx</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Database -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body p-4 text-center">
+                                    <h5 class="fw-bold mb-3 text-primary"><i class="fas fa-database"></i> Database</h5>
+                                    <div>
+                                        <span class="tech-badge bg-primary text-white">MySQL</span>
+                                        <span class="tech-badge bg-danger text-white">Redis</span>
+                                        <span class="tech-badge bg-secondary text-white">SQL Tuning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Monitoring & Tools -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body p-4 text-center">
+                                    <h5 class="fw-bold mb-3 text-primary"><i class="fas fa-tools"></i> Monitoring & Collaboration</h5>
+                                    <div>
+                                        <span class="tech-badge bg-dark text-white">Sentry</span>
+                                        <span class="tech-badge bg-success text-white">Uptime Kuma</span>
+                                        <span class="tech-badge bg-info text-dark">Jira</span>
+                                        <span class="tech-badge bg-primary text-white">Confluence</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-padding container" id="experience">
         <div class="text-center mb-5">
             <h2 class="section-title">Professional Experience</h2>
@@ -81,11 +156,15 @@
             <div class="col-lg-11">
                 <div class="timeline">
                     
+                    <!-- ========================================== -->
+                    <!-- H2O Korea -->
+                    <!-- ========================================== -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <h3 class="timeline-company">에이치투오코리아 주식회사</h3>
                         <span class="timeline-date">2024.11 - 현재 | Backend 매니저</span>
                         
+                        <!-- 1. OMS 숙박 -->
                         <div class="project-box">
                             <h4 class="project-title">1. OMS 숙박 시스템 (Order Management System - Accommodation)</h4>
                             <div class="project-header">
@@ -122,6 +201,7 @@
                             </div>
                         </div>
 
+                        <!-- 2. OMS 레저 -->
                         <div class="project-box">
                             <h4 class="project-title">2. OMS 레저 시스템 (Leisure & Ticket System)</h4>
                             <div class="project-header">
@@ -153,6 +233,7 @@
                             </div>
                         </div>
 
+                        <!-- 3. OPEN API & AWS -->
                         <div class="project-box">
                             <h4 class="project-title">3. OPEN API 및 인프라 고도화</h4>
                             <div class="case-title">1) Docker 기반 무중단 배포 (CI/CD)</div>
@@ -170,11 +251,16 @@
                         </div>
                     </div>
 
+
+                    <!-- ========================================== -->
+                    <!-- HNS Communication -->
+                    <!-- ========================================== -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <h3 class="timeline-company">(주) 에이치엔에스커뮤니케이션</h3>
                         <span class="timeline-date">2021.01 - 2024.11 | Backend 대리 (메인 개발자)</span>
                         
+                        <!-- 1. WMS -->
                         <div class="project-box">
                             <h4 class="project-title">1. 이지플레이 WMS 운용 및 레거시 마이그레이션</h4>
                             <div class="project-header">
@@ -207,6 +293,7 @@
                             </div>
                         </div>
 
+                        <!-- 2. Ad Monitoring -->
                         <div class="project-box">
                             <h4 class="project-title">2. 광고 모니터링 및 ADMIN 시스템</h4>
                             <div class="project-header">
@@ -225,6 +312,10 @@
                         </div>
                     </div>
 
+
+                    <!-- ========================================== -->
+                    <!-- Mondelez -->
+                    <!-- ========================================== -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <h3 class="timeline-company">몬델리즈 (Mondelez)</h3>
