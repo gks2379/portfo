@@ -560,7 +560,15 @@
 
 <script>
     function generatePDF() {
+        // 인쇄(PDF 저장) 시 파일명을 지정하기 위해 잠시 문서 제목을 변경합니다.
+        const originalTitle = document.title;
+        document.title = "한정우_경력기술서"; 
         window.print();
+        
+        // 인쇄 대화상자가 뜬 후 원래 제목으로 복구 (약간의 지연 필요)
+        setTimeout(() => {
+            document.title = originalTitle; 
+        }, 100);
     }
 </script>
 </body>
