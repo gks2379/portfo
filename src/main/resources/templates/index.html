@@ -321,7 +321,45 @@
                         <span class="timeline-date">2024.11 - 현재 | Backend 매니저</span>
 
                         <div class="project-box">
-                            <h4 class="project-title">1. OPEN API 시스템 고도화</h4>
+                            <h4 class="project-title">1. 호텔스토리 CMS (Channel Management System)</h4>
+                            <div class="d-flex align-items-center gap-3 text-secondary mb-3" style="font-size: 0.9rem;">
+                                <span><i class="fas fa-users me-1"></i> 3명</span>
+                                <span style="border-left: 2px solid #ddd; height: 12px;"></span>
+                                <span><i class="fas fa-chart-pie me-1"></i> 기여도 60%</span>
+                            </div>
+                            <div class="project-header">
+                                [개요] 호텔스토리 전용 API 서버 운영. AWS EC2/Docker 기반 환경에서 요금/객실 동기화 및 예약 트랜잭션을 관리하여 데이터 무결성 보장.
+                            </div>
+
+                            <div class="case-title">1) 요금 및 객실 데이터 최신화 (스케줄러 최적화)</div>
+                            <div class="case-item"><span class="case-label">[문제]</span>방대한 요금/객실 데이터 갱신 지연(기존 1시간)으로 인한 판매 기회 손실</div>
+                            <div class="case-item"><span class="case-sol-label">[해결]</span>Spring Scheduler 기반 배치 프로세스 고도화 및 Bulk Update 적용</div>
+                            <div class="case-item"><span class="case-result-label">[성과]</span>데이터 최신화 주기 1시간 → 5분 이내 단축, 실시간성 확보</div>
+
+                            <div class="case-title">2) 예약 라이프사이클 트랜잭션 관리</div>
+                            <div class="case-item"><span class="case-label">[문제]</span>예약 실패/취소 시 잔여 객실 데이터 정합성 깨짐 현상 발생</div>
+                            <div class="case-item"><span class="case-sol-label">[해결]</span>예약 전 과정(성공/취소/실패) 트랜잭션 범위 재설정 및 예외 처리 강화</div>
+                            <div class="case-item"><span class="case-result-label">[성과]</span>예약 데이터 무결성 100% 달성, 오버부킹 원천 차단</div>
+
+                            <div class="case-title">3) GitLab Runner 기반 CI/CD 구축</div>
+                            <div class="case-item"><span class="case-sol-label">[해결]</span>GitLab Runner & Docker를 활용한 자동 배포 파이프라인 구축</div>
+                            <div class="case-item"><span class="case-result-label">[성과]</span>안정적인 서비스 운영(Uptime 99.9%) 및 배포 시간 80% 단축</div>
+
+                            <div class="quant-box">
+                                <div class="quant-title"><i class="fas fa-chart-line"></i> 정량적 성과</div>
+                                <div class="quant-row">
+                                    <div class="quant-col">✓ 데이터 동기화: 1시간 → 5분 단축</div>
+                                    <div class="quant-col">✓ 데이터 무결성: 100% 달성</div>
+                                    <div class="quant-col">✓ 서비스 가동률(Uptime): 99.9% 유지</div>
+                                </div>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-badge">Java Spring Boot</span><span class="tech-badge">AWS EC2</span><span class="tech-badge">Docker</span><span class="tech-badge">GitLab Runner</span><span class="tech-badge">MySQL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-box">
+                            <h4 class="project-title">2. OPEN API 시스템 고도화</h4>
                             <div class="d-flex align-items-center gap-3 text-secondary mb-3" style="font-size: 0.9rem;">
                                 <span><i class="fas fa-users me-1"></i> 3명</span>
                                 <span style="border-left: 2px solid #ddd; height: 12px;"></span>
@@ -350,7 +388,7 @@
                         </div>
 
                         <div class="project-box">
-                            <h4 class="project-title">2. OMS 숙박 시스템 (Order Management System - Accommodation)</h4>
+                            <h4 class="project-title">3. OMS 숙박 시스템 (Order Management System - Accommodation)</h4>
                             <div class="d-flex align-items-center gap-3 text-secondary mb-3" style="font-size: 0.9rem;">
                                 <span><i class="fas fa-users me-1"></i> 6명 (Backend)</span>
                                 <span style="border-left: 2px solid #ddd; height: 12px;"></span>
@@ -390,7 +428,7 @@
                         </div>
 
                         <div class="project-box">
-                            <h4 class="project-title">3. OMS 레저 시스템 (Leisure & Ticket System)</h4>
+                            <h4 class="project-title">4. OMS 레저 시스템 (Leisure & Ticket System)</h4>
                             <div class="d-flex align-items-center gap-3 text-secondary mb-3" style="font-size: 0.9rem;">
                                 <span><i class="fas fa-users me-1"></i> 3명</span>
                                 <span style="border-left: 2px solid #ddd; height: 12px;"></span>
